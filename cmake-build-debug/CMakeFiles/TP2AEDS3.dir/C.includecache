@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/rafae/CLionProjects/TP2AEDS3/dinamica.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+dinamica.h
+C:/Users/rafae/CLionProjects/TP2AEDS3/dinamica.h
+
+C:/Users/rafae/CLionProjects/TP2AEDS3/dinamica.h
+
+C:/Users/rafae/CLionProjects/TP2AEDS3/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+dinamica.h
+C:/Users/rafae/CLionProjects/TP2AEDS3/dinamica.h
+
