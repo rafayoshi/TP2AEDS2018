@@ -23,6 +23,8 @@ int main() {
             }
         }
     }
+    free(consulta);
+    free(palavraD);
     qsort(&dic->palavras[0], dic->tamanhoDic, sizeof(Palavra), comparaLeven);
     for(i = 0; i < dic->tamanhoDic; i++){
         cont = 0;
@@ -49,6 +51,9 @@ int main() {
     }
     for(i = 0; i < dic->tamanhoDic; i++){
         printf("%s\n", dic->palavras[i].string);
+        free(dic->palavras[i].string);
     }
+    free(dic->palavras);
+    free(dic);
     return 0;
 }

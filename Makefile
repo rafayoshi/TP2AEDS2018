@@ -3,7 +3,7 @@ CFLAGS = -Wall -Werror
 OBJ = main.o dinamica.o
 DEPS = dinamica.h
 VFLAGS = --leak-check=full --leak-resolution=high --show-reachable=yes --track-origins=yes
-EXEC = ./exec < samples/input10.txt > samples/saida10.txt
+EXEC = ./exec < samples/input5.txt > samples/saida5.txt
 TIMED_RUN = time ./exec < samples/input5.txt > samples/saida5.txt
 
 all: exec
