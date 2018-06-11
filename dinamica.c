@@ -48,18 +48,17 @@ int levenshtein(char *consulta, char *palavraD) {
     return(mat[dicLen][consLen]);
 }
 
-Dicionario *criaDicionario(){
+Dicionario *criaDicionario(int tamanho){
     Dicionario *dic;
     dic = (Dicionario *) malloc(sizeof(Dicionario));
-    dic->palavras = NULL;
+    dic->palavras = (Palavra *) malloc(tamanho * sizeof(Palavra));
     dic->tamanhoDic = 0;
     return dic;
 }
 
 void insereDicionario(Dicionario *dic, char *palavra, int distLeven){
     dic->tamanhoDic++;
-    dic->palavras = (Palavra *)realloc(dic->palavras, sizeof(Palavra) * (dic->tamanhoDic));
-    dic->palavras[dic->tamanhoDic - 1].string = (char *) malloc(5000);
+    dic->palavras[dic->tamanhoDic - 1].string = (char *) malloc(6000);
     strcpy(dic->palavras[dic->tamanhoDic - 1].string, palavra);
     dic->palavras[dic->tamanhoDic - 1].distLeven = distLeven;
 }

@@ -4,14 +4,13 @@
 #include "dinamica.h"
 
 int main() {
-    freopen("C:\\Users\\rafae\\CLionProjects\\TP2AEDS3\\samples\\input5.txt", "r", stdin);
     int D, n, i, distLeven, j;
     size_t cont;
     scanf("%d %d", &D, &n);
-    char *consulta = (char *) malloc(5000);
-    char *palavraD = (char *) malloc(5000);
+    char *consulta = (char *) malloc(6000);
+    char *palavraD = (char *) malloc(6000);
     scanf("%s", consulta);
-    Dicionario *dic = criaDicionario();
+    Dicionario *dic = criaDicionario(D);
     for(i = 0; i < D; i++){
         scanf("%s", palavraD);
         if(strcmp(consulta, palavraD) == 0){
@@ -40,14 +39,13 @@ int main() {
         if(cont != 0){
             cont++;
             qsort(&dic->palavras[i], cont, sizeof(Palavra), cstring_cmp);
-            i = j;
         }
         else{
             if(j >= dic->tamanhoDic){
                 break;
             }
-            i = j;
         }
+        i = j - 1;
     }
     for(i = 0; i < dic->tamanhoDic; i++){
         printf("%s\n", dic->palavras[i].string);

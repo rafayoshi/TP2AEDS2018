@@ -10,7 +10,7 @@ typedef struct Dicionario{
 
 int valorMin3(int, int, int);
 int levenshtein(char *, char *);
-Dicionario *criaDicionario();
+Dicionario *criaDicionario(int);
 void insereDicionario(Dicionario *, char *, int);
 int comparaLeven(const void *, const void *);
 int cstring_cmp(const void *, const void *);
