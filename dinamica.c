@@ -3,7 +3,7 @@
 #include <string.h>
 #include "dinamica.h"
 
-int valorMin3(int a, int b, int c){
+int valorMin3(int a, int b, int c){ // Calcula o mínimo de 3 elementos
     if(a < b){
         if(a < c){
             return a;
@@ -22,7 +22,7 @@ int valorMin3(int a, int b, int c){
     }
 }
 
-int levenshtein(char *consulta, char *palavraD) {
+int levenshtein(char *consulta, char *palavraD) { //Calcula distância de Levenshtein
     unsigned int x, y, consLen, dicLen, status = 0;
     consLen = strlen(consulta);
     dicLen = strlen(palavraD);
@@ -48,7 +48,7 @@ int levenshtein(char *consulta, char *palavraD) {
     return(mat[dicLen][consLen]);
 }
 
-Dicionario *criaDicionario(int tamanho){
+Dicionario *criaDicionario(int tamanho){ //Aloca um dicionário
     Dicionario *dic;
     dic = (Dicionario *) malloc(sizeof(Dicionario));
     dic->palavras = (Palavra *) malloc(tamanho * sizeof(Palavra));
@@ -56,21 +56,21 @@ Dicionario *criaDicionario(int tamanho){
     return dic;
 }
 
-void insereDicionario(Dicionario *dic, char *palavra, int distLeven){
+void insereDicionario(Dicionario *dic, char *palavra, int distLeven){ //Insere uma palavra no dicionário
     dic->tamanhoDic++;
     dic->palavras[dic->tamanhoDic - 1].string = (char *) malloc(6000);
     strcpy(dic->palavras[dic->tamanhoDic - 1].string, palavra);
     dic->palavras[dic->tamanhoDic - 1].distLeven = distLeven;
 }
 
-int comparaLeven(const void *p, const void *q)
+int comparaLeven(const void *p, const void *q) //Compara dois ints para usar na função qsort()
 {
     int a = ((Palavra *)p)->distLeven;
     int b = ((Palavra *)q)->distLeven;
     return (a - b);
 }
 
-int cstring_cmp(const void *a, const void *b)
+int cstring_cmp(const void *a, const void *b) //Compara duas strings para usar na função qsort()
 {
     const char *pa = ((Palavra *)a)->string;
     const char *pb = ((Palavra *)b)->string;
